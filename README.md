@@ -80,7 +80,11 @@
 
 ## Git
 
-오래되어 기억이 나지 않을 수 있지만, 이 저장소를 지금 바로 [Fork](https://github.com/2015-c-study/mission-student-management-system#fork-destination-box)하고 [Git을 장난감처럼](https://github.com/progit/progit/tree/master/ko) 이용해보세요. 지금 보기 싫어도 언젠간 만날 친구입니다.
+오래되어 기억이 나지 않을 수 있지만, 이 저장소를 지금 바로 [Fork](https://github.com/2015-c-study/mission-student-management-system#fork-destination-box)하고 [Git을 장난감처럼]() 이용해보세요. 지금 보기 싫어도 언젠간 만날 친구입니다.
+
+* [Pro Git](https://github.com/progit/progit/tree/master/ko)
+* [Git Book](http://git-scm.com/book/ko/v1)
+* [누구나 쉽게 이해할 수 있는 Git 입문](http://backlogtool.com/git-guide/kr/)
 
 ## 힌트
 
