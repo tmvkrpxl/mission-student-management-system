@@ -15,6 +15,8 @@ void input_score(struct student*);
 void student_status(struct student*);
 void search_student(struct student*);
 void remove_student(struct student*);
+void transfer_score(struct student*);
+void transfer_status(struct student*);
 
 int main(void){
 	int n;
@@ -41,9 +43,34 @@ int main(void){
 		//등록된 학생의 제거
 		remove_student(student);
 	}
-
-
 	free(student);
+}
+
+void transfer_score(struct student* student){
+	if ((student->score) >= 91 && (student->score) <= 100){
+		printf("A");
+	}
+	if ((student->score) >= 81 && (student->score) <= 90){
+		printf("B");
+	}
+	if ((student->score) >= 71 && (student->score) <= 80){
+		printf("C");
+	}
+	if ((student->score) >= 61 && (student->score) <= 70){
+		printf("D");
+	}
+	if ((student->score) <= 60){
+		printf("E");
+	}
+}
+
+void transfer_status(struct student* student){
+	if ((student->status) == 0){
+		printf("재학");
+	}
+	if ((student->status) == 0){
+		printf("휴학");
+	}
 }
 
 void register_student(struct student* student){
@@ -65,8 +92,6 @@ void input_score(struct student* student){
 	단, 휴학 중인 상태의 학생은 성적을 입력할 수 없습니다.*/
 	printf("점수를 입력하세요 ( 0 ~ 100 )");
 	scanf_s("%d",&(student->score));
-
-
 }
 
 int status(struct student* student){
@@ -107,27 +132,48 @@ void search_student(struct student* student){
 		printf("학번을 입력하세요\n");
 		scanf_s("%d", &m);
 		if (m == (student->number)){
-			printf("");
+			printf("학번 %d\n이름 %s\n", (student->number), (student->name));
+			printf("성적 ");
+			transfer_score(student);
+			transfer_status(student);
 		}
+		else printf("일치하는 학번이 없습니다\n");
 	}
 	if (n == 2){
 		//이름검색
 		printf("이름을 입력하세요\n");
 		scanf_s("%s", &m);
+		if (m == (student->number)){
+			printf("학번 %d\n이름 %s\n", (student->number), (student->name));
+			printf("성적 ");
+			transfer_score(student);
+			transfer_status(student);
+		}
+		else printf("일치하는 이름이 없습니다\n");
 	}
 	if (n == 3){
 		//성적검색
 		printf("성적을 입력하세요\n");
 		scanf_s("%d", &m);
 		if (m == (student->score)){
-			printf("");
+			printf("학번 %d\n이름 %s\n", (student->number), (student->name));
+			printf("성적 ");
+			transfer_score(student);
+			transfer_status(student);
 		}
+		else printf("일치하는 성적이 없습니다\n");
 
 	}
 	if (n == 4){
 		//재학/휴학검색
 		printf("재학 상태이면 0을 입력하세요\n휴학 상태이면 1을 입력하세요\n");
 		scanf_s("%d", &m);
+		if (m == (student->status)){
+			printf("학번 %d\n이름 %s\n", (student->number), (student->name));
+			printf("성적 ");
+			transfer_score(student);
+			transfer_status(student);
+		}
 	}
 	else printf("1~4의 숫자를 입력하세요\n");
 }
